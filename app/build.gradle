@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+
+def keystorePropertiesFile = rootProject.file("docs/keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+
+        applicationId APPLICATION_ID
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
+        multiDexEnabled true
+    }
+    signingConfigs {
+        debug {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile rootProject.file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile rootProject.file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField("String", "BUGLY_APP_ID", BUGLY_APP_ID);
+            buildConfigField("String", "SIGN_KEY", SIGN_KEY);
+            buildConfigField("String", "WX_APP_ID", WX_APP_ID);
+            buildConfigField("String", "WX_APP_SECRET", WX_APP_SECRET);
+            buildConfigField("String", "SINA_APP_KEY", SINA_APP_KEY);
+            buildConfigField("String", "SINA_APP_SECRET", SINA_APP_SECRET);
+            buildConfigField("String", "SINA_REDIRECT_URL", SINA_REDIRECT_URL);
+            buildConfigField("String", "SINA_SCOPE", SINA_SCOPE);
+            buildConfigField("String", "QQ_APP_ID", QQ_APP_ID);
+            buildConfigField("String", "QQ_APP_KEY", QQ_APP_KEY);
+            buildConfigField("String", "XIAOMI_APP_ID", XIAOMI_APP_ID);
+            buildConfigField("String", "XIAOMI_APP_KEY", XIAOMI_APP_KEY);
+            buildConfigField("String", "HOST_URL", HOST_DEBUG);
+
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            buildConfigField("String", "BUGLY_APP_ID", BUGLY_APP_ID);
+            buildConfigField("String", "SIGN_KEY", SIGN_KEY);
+            buildConfigField("String", "WX_APP_ID", WX_APP_ID);
+            buildConfigField("String", "WX_APP_SECRET", WX_APP_SECRET);
+            buildConfigField("String", "SINA_APP_KEY", SINA_APP_KEY);
+            buildConfigField("String", "SINA_APP_SECRET", SINA_APP_SECRET);
+            buildConfigField("String", "SINA_REDIRECT_URL", SINA_REDIRECT_URL);
+            buildConfigField("String", "SINA_SCOPE", SINA_SCOPE);
+            buildConfigField("String", "QQ_APP_ID", QQ_APP_ID);
+            buildConfigField("String", "QQ_APP_KEY", QQ_APP_KEY);
+            buildConfigField("String", "XIAOMI_APP_ID", XIAOMI_APP_ID);
+            buildConfigField("String", "XIAOMI_APP_KEY", XIAOMI_APP_KEY);
+            buildConfigField("String", "HOST_URL", HOST_RELEASE);
+
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:${LIB_ANDROID_SUPPORT_VERSION}"
+    implementation "com.android.support:cardview-v7:${LIB_ANDROID_SUPPORT_VERSION}"
+    implementation project(':RxExtention')
+    implementation "com.wuhenzhizao:titlebar:${LIB_TITLEBAR_VERSION}"
+    implementation "com.scwang.smartrefresh:SmartRefreshLayout:${LIB_SMARTREFRESHLAYOUT_VERSION}"
+    implementation "com.hwangjr.rxbus:rxbus:${LIB_RXBUS_VERSION}"
+    implementation "com.jakewharton:butterknife:${LIB_BUTTERKNIFE_VERSION}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${LIB_BUTTERKNIFE_VERSION}"
+    implementation "com.contrarywind:Android-PickerView:${LIB_PICKERVIEW_VERSION}"
+    //......
+}

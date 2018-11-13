@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">BaseDemo</string>
+
+    <!-- 通用 -->
+    <!--<string name="mobile">手机号</string>-->
+    <string name="commit">提交</string>
+    <string name="cancel">取消</string>
+    <string name="next">下一步</string>
+    <string name="save">保存</string>
+    <string name="bind">绑定</string>
+    <string name="already_bind">已绑定</string>
+    <string name="delete">删除</string>
+    <string name="manage">管理</string>
+    <string name="done">完成</string>
+    <string name="edit">编辑</string>
+    <string name="add">添加</string>
+    <string name="clear">清空</string>
+    <string name="confirm">确定</string>
+    <string name="error_remote_login">您已在别处登录</string>
+    <string name="album">相册</string>
+
+    <!-- 登录注册 -->
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="phone">手机号</string>
+    <string name="pwd_length">6-14位密码</string>
+    <string name="forget_pwd">忘记密码</string>
+    <string name="third_login">第三方帐户登录</string>
+    <string name="authCode">验证码</string>
+    <string name="get_authCode">获取验证码</string>
+    <string name="forget_pwd_title">忘记密码</string>
+    <string name="choose_zipCode_title">选择区号</string>
+    <string name="hint_plz_input_phone">请输入手机号</string>
+    <string name="hint_plz_input_authCode">请输入4位验证码</string>
+    <string name="hint_plz_input_pwd">请输入6-14位密码</string>
+    <string name="success_authCode">验证码发送成功</string>
+    <string name="success_register">注册成功！</string>
+    <string name="success_login">登录成功！</string>
+
+    <!-- ...... -->
+    <string name="net_error">网络出错</string>
+    <string name="bornday">出生日期</string>
+    <string name="resend_code">{0}s后重发</string>
+    <string name="select_language">选择语言</string>
+    <string name="empty_data">暂无数据</string>
+    <string name="shop_title">商城</string>
+
+    <!-- ...... -->
+
+</resources>

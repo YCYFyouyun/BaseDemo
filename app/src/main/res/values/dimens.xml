@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="def_magin_big">30dp</dimen>
+    <dimen name="def_magin">15dp</dimen>
+    <dimen name="def_textsize15">15sp</dimen>
+    <dimen name="def_textsize">16sp</dimen>
+    <dimen name="def_drawable_padding">6dp</dimen>
+    <dimen name="def_line">1dp</dimen>
+    <dimen name="def_btn_height">46dp</dimen>
+    <dimen name="def_btn_height_big">50dp</dimen>
+    <dimen name="def_radius">5dp</dimen>
+
+    <dimen name="btn_textsize">15sp</dimen>
+    <dimen name="small_textsize">12sp</dimen>
+
+    <dimen name="input_height">50dp</dimen>
+    <dimen name="input_height_big">53dp</dimen>
+    <dimen name="icode_width">60dp</dimen>
+
+    <dimen name="margin40">40dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+
+    <dimen name="device_btn_margin">24dp</dimen>
+    <dimen name="device_setting_margin">24dp</dimen>
+    <dimen name="device_setting_value_height">20dp</dimen>
+    <dimen name="device_share_image_size">55dp</dimen>
+    <dimen name="level_item_height">44dp</dimen>
+    <dimen name="level_margin">20dp</dimen>
+
+    <dimen name="sidebar_width">40dp</dimen>
+    <dimen name="sidebar_textsize">12sp</dimen>
+
+    <!--<dimen name="device_detail_padding">80dp</dimen>-->
+    <dimen name="device_detail_padding">100dp</dimen>
+    <dimen name="device_detail_padding_reverse">-100dp</dimen>
+
+</resources>

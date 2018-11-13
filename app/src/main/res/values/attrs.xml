@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomViewPager">
+        <!--是否可滑动-->
+        <attr name="no_scroll" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomIndexBar">
+        <attr name="normalColor" format="color"/>
+        <attr name="selecColor" format="color"/>
+        <attr name="indexSize" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomCardView">
+        <!--宽度占比-->
+        <attr name="width_weight" format="integer"/>
+        <!--高度占比-->
+        <attr name="height_weight" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomAvatarListLayout">
+        <!--创建的最大ImageView数量-->
+        <attr name="image_max_count" format="integer"/>
+        <!--创建的ImageView的大小-->
+        <attr name="image_size" format="dimension"/>
+        <!--要叠加的ImageView偏移量-->
+        <attr name="image_offset" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomWeightView">
+        <attr name="startValue" format="integer"/>
+        <attr name="endValue" format="integer"/>
+        <attr name="currentValue" format="float"/>
+        <attr name="shortPointCount" format="integer"/>
+        <attr name="longUnix" format="integer"/>
+    </declare-styleable>
+    
+</resources>

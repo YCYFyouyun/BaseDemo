@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    publishNonDefault true
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api "com.android.support:appcompat-v7:${LIB_ANDROID_SUPPORT_VERSION}"
+    api "com.android.support:support-v4:${LIB_ANDROID_SUPPORT_VERSION}"
+    api "com.android.support:support-annotations:${LIB_ANDROID_SUPPORT_VERSION}"
+    api "com.android.support:recyclerview-v7:${LIB_ANDROID_SUPPORT_VERSION}"
+    api "com.squareup.retrofit2:retrofit:${LIN_RETROFIT_VERSION}"
+    api "com.squareup.retrofit2:adapter-rxjava2:${LIN_RETROFIT_VERSION}"
+    api "com.github.zhaokaiqiang.klog:library:${LIB_KLOG_VERSION}"
+    api "com.google.code.gson:gson:${LIB_GSON_VERSION}"
+    api "com.alibaba:fastjson:${LIB_FASTJSON_VERSION}"
+    api "com.lwkandroid:RTPermissionLib:${LIB_RTPERMISSION_VERSION}"
+    api("com.lwkandroid:recyclerviewadapter:${LIB_RCVADAPTER_VERSION}") {
+        exclude(group: 'com.android.support', module: 'recyclerview-v7')
+    }
+    api("com.lwkandroid:ImagePicker:${LIB_IMAGEPICKER_VERSION}") {
+        exclude(group: 'com.android.support', module: 'support-v4')
+        exclude(group: 'com.github.bumptech.glide', module: 'glide')
+    }
+    api("com.github.bumptech.glide:glide:${LIB_GLIDE_VERSION}") {
+        exclude(group: 'com.android.support', module: 'support-v4')
+        exclude(group: 'com.android.support', module: 'appcompat-v7')
+    }
+    api("com.github.bumptech.glide:okhttp3-integration:${LIB_GLIDE_VERSION}") {
+        exclude(group: 'com.android.support', module: 'support-v4')
+        exclude(group: 'com.android.support', module: 'appcompat-v7')
+    }
+    annotationProcessor "com.github.bumptech.glide:compiler:${LIB_GLIDE_VERSION}"
+    debugApi "com.facebook.stetho:stetho:${LIB_STETHO_VERSION}"
+    debugApi "com.facebook.stetho:stetho-okhttp3:${LIB_STETHO_VERSION}"
+    debugApi "com.squareup.leakcanary:leakcanary-android:${LIB_LEAKCANARY_VERSION}"
+    api "com.android.support:multidex:${LIB_MULTIDEX_VERSION}"
+}

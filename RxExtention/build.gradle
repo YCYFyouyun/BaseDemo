@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    publishNonDefault true
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api "io.reactivex.rxjava2:rxjava:${LIB_RXJAVA2_VERSION}"
+    api "io.reactivex.rxjava2:rxandroid:${LIB_RXANDROID_VERSION}"
+    api "com.jakewharton.rxbinding2:rxbinding:${LIB_RXBINDING_VERSION}"
+    api "com.android.support:appcompat-v7:${LIB_ANDROID_SUPPORT_VERSION}"
+    api "com.android.support:support-v4:${LIB_ANDROID_SUPPORT_VERSION}"
+    api project(':BasicProject')
+}
