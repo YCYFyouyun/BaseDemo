@@ -59,7 +59,7 @@ data文件下为各模块的数据仓库，如：CommRepository、UserRepository
 
 ## 其它
 
-> * gradle.properties统一管理项目版本、编译版本、引用库的版本
+> * gradle.properties统一管理项目版本、编译版本、引用库的版本、第三方Appkey、Api地址
 > * keystore.properties(docs文件夹下)配置签名文件地址、别名及密码
 > * key文件夹下放置签名文件
 > * Release版本需避免代码混淆的部分，请在主工程的proguard-rules.pro(常用的指令及规则可参考BaseProject工程的proguard-rules.pro)
